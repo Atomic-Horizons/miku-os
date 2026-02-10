@@ -21,7 +21,6 @@ modules:
     install:
       packages:
         - micro
-        - starship
 
   - type: default-flatpaks
     configurations:
