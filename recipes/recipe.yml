@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: miku-os
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: The best distro for Miku lovers!
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: latest
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -38,8 +38,9 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
+          - one.ablaze.floorp  # The browser
+          - com.discordapp.Discord # Miku needs to chat 
+          - org.prismlauncher.PrismLauncher # Who doesn't like Minecraft?
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
