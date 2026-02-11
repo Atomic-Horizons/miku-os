@@ -26,6 +26,10 @@ modules:
         - haruna
         - elisa
         - git
+        - gwenview
+        - krita
+        - opentoonz
+        - lmms
 
   - type: default-flatpaks
     configurations:
@@ -35,7 +39,7 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - one.ablaze.floorp  # The browser
           - dev.vencord.Vesktop # Miku needs to chat 
-          - io.github.kolunmi.Bazaar
+          - online.hatsune_miku.tachidesk-vaadinui # Manga reader with a Miku logo
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
