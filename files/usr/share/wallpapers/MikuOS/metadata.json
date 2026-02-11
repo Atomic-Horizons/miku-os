@@ -6,6 +6,8 @@
         "Id": "MikuOS",
         "Name": "MikuOS Alpha Default",
         "License": "CC-BY-SA-4.0",
-        "Version": "1.0"
+        "Version": "1.0",
+        "ServiceTypes": ["Plasma/Wallpaper"],
+        "KPackageStructure": "Wallpaper/Generic"
     }
 }
