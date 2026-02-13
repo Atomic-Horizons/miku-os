@@ -47,12 +47,19 @@ modules:
   - type: script
     scripts:
       - |
-        # Force every 'start-here' and 'fedora-logo' to be Miku
-        # This assumes your logo is in /usr/share/icons/hicolor/48x48/apps/start-here.png
-        SOURCE="/usr/share/icons/hicolor/48x48/apps/start-here.png"
-        find /usr/share/icons -name "fedora-logo-icon.png" -exec cp $SOURCE {} \;
-        find /usr/share/icons -name "fedora-logo-icon.svg" -exec cp /usr/share/icons/hicolor/scalable/apps/start-here.svg {} \;
+        # 1. Define our Master Miku Files (These must exist in your repo!)
+        MIKU_PNG="/usr/share/icons/hicolor/48x48/apps/start-here.png"
+        MIKU_SVG="/usr/share/icons/hicolor/scalable/apps/start-here.svg"
+
+        # 2. The "Jedi Mind Trick" (Symlinking)
+        # Instead of copying, we force 'ln -sf' (Link Symbolically Force).
+        # This breaks the old Fedora links and points them straight to Miku.
+        find /usr/share/icons -name "fedora-logo-icon.png" -exec ln -sf $MIKU_PNG {} \;
+        find /usr/share/icons -name "fedora-logo-icon.svg" -exec ln -sf $MIKU_SVG {} \;
         
-        # Nuke the system-wide icon cache
-        gtk-update-icon-cache /usr/share/icons/hicolor
-        gtk-update-icon-cache /usr/share/icons/breeze
+        # 3. Handle the "Generic" Distributor Logo too (Just to be safe)
+        find /usr/share/icons -name "distributor-logo.svg" -exec ln -sf $MIKU_SVG {} \;
+
+        # 4. Refresh Cache (Added '|| true' so it won't crash the build if it complains)
+        gtk-update-icon-cache /usr/share/icons/hicolor || true
+        gtk-update-icon-cache /usr/share/icons/breeze || true
