@@ -1,20 +1,21 @@
 #!/bin/bash
-set -e # Exit if a command fails (except for the ones we 'allow' to fail)
+set -e
 
-echo "Starting MikuOS icon takeover..."
-
-# Paths to our Miku files
+# 1. Our Master Source (The Miku icon you already uploaded)
 MIKU_PNG="/usr/share/icons/hicolor/48x48/apps/start-here.png"
 MIKU_SVG="/usr/share/icons/hicolor/scalable/apps/start-here.svg"
 
-# Force link the icons
-# Using -v (verbose) so we can see what it's doing in the logs
+echo "Redirecting all 'places' to Miku..."
+
+# 2. Fix the 'places' folders for every resolution
+# This finds every 'start-here' file in ANY 'places' folder and replaces it
+find /usr/share/icons -path "*/places/*" -name "start-here.png" -exec ln -sfv $MIKU_PNG {} \;
+find /usr/share/icons -path "*/places/*" -name "start-here.svg" -exec ln -sfv $MIKU_SVG {} \;
+
+# 3. Handle the Fedora-specific names we found earlier
+# Just in case the system is looking for 'fedora-logo-icon' instead of 'start-here'
 find /usr/share/icons -name "fedora-logo-icon.png" -exec ln -sfv $MIKU_PNG {} \;
 find /usr/share/icons -name "fedora-logo-icon.svg" -exec ln -sfv $MIKU_SVG {} \;
-find /usr/share/icons -name "distributor-logo.svg" -exec ln -sfv $MIKU_SVG {} \;
 
-# Update caches
+# 4. Refresh Caches
 gtk-update-icon-cache /usr/share/icons/hicolor || true
-gtk-update-icon-cache /usr/share/icons/breeze || true
-
-echo "Icon takeover complete!"
