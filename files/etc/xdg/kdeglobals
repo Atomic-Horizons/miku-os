@@ -1,0 +1,12 @@
+[General]
+# Miku Frosty Cyan (#82c3c4)
+AccentColor=130,195,196
+ColorScheme=BreezeLight
+
+# Comfortaa Font Setup
+font=Comfortaa,10,-1,5,50,0,0,0,0,0,Regular
+fixed=Comfortaa,10,-1,5,50,0,0,0,0,0,Regular
+smallestReadableFont=Comfortaa,8,-1,5,50,0,0,0,0,0,Regular
+toolBarFont=Comfortaa,10,-1,5,50,0,0,0,0,0,Regular
+menuFont=Comfortaa,10,-1,5,50,0,0,0,0,0,Regular
+windowTitleFont=Comfortaa,10,-1,5,75,0,0,0,0,0,Bold
