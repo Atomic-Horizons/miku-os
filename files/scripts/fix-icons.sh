@@ -74,3 +74,16 @@ ln -sfv $MIKU_MASTER $FEDORA_BG_DIR/default-dark.png
 echo "=== MikuOS Takeover Complete ==="
 chmod -R 644 /usr/share/fonts/Comfortaa
 fc-cache -fv
+
+# ... keep your existing extraction and Miku logo logic ...
+
+# --- THE IDENTITY SWAP ---
+# If the system is stubborn and insists on 'breeze', we make breeze a link to Cyan
+if [ -d "/usr/share/icons/Cyan-Breeze-Dark-Icons" ]; then
+    echo "Performing the Cyan-Breeze Identity Swap..."
+    
+    # We rename the old breeze folder (safety) and link ours to its name
+    # This way, if KDE asks for 'breeze', it gets 'Cyan'
+    mv /usr/share/icons/breeze /usr/share/icons/breeze-original || true
+    ln -sf /usr/share/icons/Cyan-Breeze-Dark-Icons /usr/share/icons/breeze
+fi
