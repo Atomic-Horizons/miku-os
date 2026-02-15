@@ -1,2 +1,17 @@
 [Icons]
 Theme=Cyan-Breeze-Dark-Icons
+
+[General]
+# Your Frosty Cyan Accent Color
+AccentColor=130,195,196
+LastUsedCustomAccentColor=130,195,196
+# UI Fonts
+font=Comfortaa,10,-1,5,50,0,0,0,0,0
+fixed=Noto Sans Mono,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=Comfortaa,8,-1,5,50,0,0,0,0,0
+toolBarFont=Comfortaa,10,-1,5,50,0,0,0,0,0
+menuFont=Comfortaa,10,-1,5,50,0,0,0,0,0
+
+[KDE]
+# This ensures we are on the Light/White base theme
+LookAndFeelPackage=org.kde.breeze.desktop
