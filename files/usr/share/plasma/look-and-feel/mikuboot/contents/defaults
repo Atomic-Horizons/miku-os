@@ -1,6 +1,12 @@
+[kdeglobals][KDE]
+lookAndFeelPackage=mikuboot
+# This forces the "Light" color scheme
+colorScheme=BreezeLight
+cursorTheme=mikursor
+
 [kcminputrc][Mouse]
 cursorTheme=mikursor
 cursorSize=30
 
-[kdeglobals][KDE]
-cursorTheme=mikursor
+[kcminputrc][Icons]
+Theme=Cyan-Breeze-Dark-Icons
