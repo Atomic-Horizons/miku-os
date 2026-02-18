@@ -15,3 +15,4 @@ menuFont=Comfortaa,10,-1,5,50,0,0,0,0,0
 [KDE]
 # This ensures we are on the Light/White base theme
 LookAndFeelPackage=org.kde.breeze.desktop
+cursorTheme=Hatsune Miku
