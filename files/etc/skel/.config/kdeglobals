@@ -11,4 +11,4 @@ toolBarFont=Comfortaa,10,-1,5,50,0,0,0,0,0
 menuFont=Comfortaa,10,-1,5,50,0,0,0,0,0
 
 [KDE]
-LookAndFeelPackage=org.kde.breeze.desktop
+LookAndFeelPackage=mikuboot
