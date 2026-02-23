@@ -26,6 +26,36 @@ EOF
 mkdir -p /usr/share/icons/default
 echo -e "[Icon Theme]\nInherits=mikursor" > /usr/share/icons/default/index.theme
 
-# 4. FORCE KDE to see the new theme
+# 4. FORCE GLOBAL PANEL TEMPLATE (The Plasma 6 44px Fix)
+# Overwrite the default Plasma 6 layout.js so every new panel is exactly 44px
+MASTER_TEMPLATE="/usr/share/plasma/layout-templates/org.kde.plasma.desktop.defaultPanel/contents/layout.js"
+
+cat << 'EOF' > "$MASTER_TEMPLATE"
+var panel = new Panel
+panel.location = "bottom"
+panel.height = 44
+
+var widgets = [
+    "org.kde.plasma.kickoff",
+    "org.kde.plasma.pager",
+    "org.kde.plasma.icontasks",
+    "org.kde.plasma.marginsseparator",
+    "org.kde.plasma.systemtray",
+    "org.kde.plasma.digitalclock"
+]
+
+for (var i = 0; i < widgets.length; i++) {
+    var widget = panel.addWidget(widgets[i])
+    if (widgets[i] === "org.kde.plasma.kickoff") {
+        widget.currentConfigGroup = ["General"]
+        widget.writeConfig("icon", "start-here-kde-symbolic")
+    }
+}
+EOF
+
+# Ensure the system has permission to read the patched template
+chmod 644 "$MASTER_TEMPLATE"
+
+# 5. FORCE KDE to see the new theme
 # This clears the cache so 'lookandfeeltool' sees mikuboot immediately
 kbuildsycoca6 --noincremental || true
