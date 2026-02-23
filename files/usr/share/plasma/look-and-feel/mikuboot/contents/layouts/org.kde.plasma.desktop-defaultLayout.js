@@ -1,6 +1,7 @@
 var panel = new Panel
 panel.location = "bottom"
 panel.height = 44  // This is your magic number
+panel.formFactor = "horizontal" // Ensures it behaves as a standard taskbar
 
 // This defines which widgets appear on your MikuOS panel
 var widgets = [
