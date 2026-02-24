@@ -32,12 +32,12 @@ modules:
         - lmms
 
   - type: flatpaks
-  image-src: https://dl.flathub.org/repo/flathub.flatpakrepo
-  install:
-    - one.ablaze.floorp
-    - dev.vencord.Vesktop
-    - online.hatsune_miku.tachidesk-vaadinui
-    - io.github.vance_m.Bazaar
+    image-src: https://dl.flathub.org/repo/flathub.flatpakrepo
+    install:
+      - one.ablaze.floorp
+      - dev.vencord.Vesktop
+      - online.hatsune_miku.tachidesk-vaadinui
+      - io.github.vance_m.Bazaar
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
