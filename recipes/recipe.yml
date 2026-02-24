@@ -17,6 +17,12 @@ modules:
       - source: .
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  - type: copr
+    enable:
+      - prymulas/floorp   # For Floorp Browser
+      - vbatts/vesktop    # For Vesktop
+      - ublue-os/packages # This is the NEW home for the Bazaar Store (moved from staging)
+
   - type: dnf
     install:
       packages:
@@ -30,6 +36,9 @@ modules:
         - krita
         - opentoonz
         - lmms
+        - floorp # Here I start with the COPR apps
+        - vesktop
+        - bazaar
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
