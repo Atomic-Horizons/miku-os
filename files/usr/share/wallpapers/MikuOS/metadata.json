@@ -1,10 +1,10 @@
 {
     "KPlugin": {
         "Authors": [
-            { "Name": "MikuOS Team" }
+            { "Name": "Atomic Horizons" }
         ],
         "Id": "MikuOS",
-        "Name": "MikuOS Alpha Default",
+        "Name": "MikuOS",
         "License": "CC-BY-SA-4.0",
         "Version": "1.0",
         "ServiceTypes": ["Plasma/Wallpaper"],
