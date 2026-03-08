@@ -8,7 +8,7 @@ chmod -R 755 /usr/share/icons/mikursor
 # 2. Force Global Defaults
 # We write to /etc/xdg because it's the 'system' level for Fedora
 mkdir -p /etc/xdg
-cat <<EOF > /etc/xdg/kdeglobals
+cat <<EOF >> /etc/xdg/kdeglobals
 [KDE]
 lookAndFeelPackage=mikuboot
 cursorTheme=mikursor
