@@ -39,6 +39,6 @@ modules:
       - fix-branding.sh
 
   - type:  yafti
-  custom-flatpaks:
+    custom-flatpaks:
       - Celluloid: io.github.celluloid_player.Celluloid
       - kritaTest: org.kde.krita
