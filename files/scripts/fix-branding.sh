@@ -55,7 +55,3 @@ EOF
 
 # Ensure the system has permission to read the patched template
 chmod 644 "$MASTER_TEMPLATE"
-
-# 5. FORCE KDE to see the new theme
-# This clears the cache so 'lookandfeeltool' sees mikuboot immediately
-kbuildsycoca6 --noincremental || true
