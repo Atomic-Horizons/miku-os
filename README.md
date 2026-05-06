@@ -1,4 +1,4 @@
-# MikuOS &nbsp; [![bluebuild build badge](https://github.com/shinylisan/miku-os/actions/workflows/build.yml/badge.svg)](https://github.com/shinylisan/miku-os/actions/workflows/build.yml)
+# MikuOS   [![bluebuild build badge](https://github.com/shinylisan/miku-os/actions/workflows/build.yml/badge.svg)](https://github.com/shinylisan/miku-os/actions/workflows/build.yml)
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
@@ -34,3 +34,5 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/shinylisan/miku-os
 ```
+
+✨ If your OS doesn’t spark joy, just add more Miku until it does.
