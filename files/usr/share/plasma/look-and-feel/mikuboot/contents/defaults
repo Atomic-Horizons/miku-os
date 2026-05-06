@@ -10,3 +10,6 @@ cursorSize=48
 
 [kcminputrc][Icons]
 Theme=Cyan-Breeze-Dark-Icons
+
+[Wallpaper][org.kde.image][General]
+Image=/usr/share/wallpapers/MikuOS/contents/images/1920x1080.png
