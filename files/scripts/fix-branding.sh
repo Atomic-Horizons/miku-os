@@ -55,3 +55,6 @@ EOF
 
 # Ensure the system has permission to read the patched template
 chmod 644 "$MASTER_TEMPLATE"
+
+# set default plymouth theme as mikuboot
+plymouth-set-default-theme mikuboot -R || true
