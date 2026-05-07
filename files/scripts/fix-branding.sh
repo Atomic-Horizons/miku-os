@@ -53,8 +53,11 @@ for (var i = 0; i < widgets.length; i++) {
 }
 EOF
 
-# Ensure the system has permission to read the patched template
+# make sure the system has permission to read the patched template
 chmod 644 "$MASTER_TEMPLATE"
 
-# set default plymouth theme as mikuboot
+# enables custom initramfs generation for plymouth theme
+rpm-ostree initramfs --enable || true
+
+# set mikuboot as default plymouth
 plymouth-set-default-theme mikuboot -R || true
